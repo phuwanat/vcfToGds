@@ -5,8 +5,6 @@ task runGds {
 		Int? disk
 		Float? memory
 		Int? preemptible
-		String? infoimport
-		String? formatimport
 	}
 	
 	command {
@@ -32,14 +30,12 @@ workflow vcfToGds_wf {
 		Int? disk = 100
 		Float? memory = 20
 		Int? preemptible = 0
-		String? infoimport = "NULL"
-		String? formatimport = "NULL"
 		
 	}
 	
 	scatter(this_file in vcf_files) {
 		call runGds { 
-			input: vcf = this_file, disk = disk, memory = memory, preemptible = preemptible, infoimport = infoimport, formatimport = formatimport
+			input: vcf = this_file, disk = disk, memory = memory, preemptible = preemptible
 		}
 	}
 
@@ -48,8 +44,8 @@ workflow vcfToGds_wf {
 	}
 
 	meta {
-        author: "Tim Majarian edited by Phuwanat"
-        email: "tmajaria@broadinstitute.org"
+        author: ["Tim Majarian","Phuwanat"]
+        email: ["tmajaria@broadinstitute.org","s.phuwanat@gmail.com"]
         description: "Convert a VCF file to a GDS file using the Seq Array package."
     }
 
