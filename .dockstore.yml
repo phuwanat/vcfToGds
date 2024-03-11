@@ -1,9 +1,9 @@
-version: 1.0
+version: 1.1.1
 workflows:
     - subclass: WDL
       primaryDescriptorPath: /vcfToGds.wdl
       testParameterFiles:
-          - /test_inputs/ALL.chr22.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.MAC10.01p.vcf.gz
+          - /vcf-to-gds-local.json
       readMePath: 
           - /README.md
       authors:
