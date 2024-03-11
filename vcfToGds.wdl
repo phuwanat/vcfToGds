@@ -32,8 +32,8 @@ workflow vcfToGds_wf {
 		Int? disk = 100
 		Float? memory = 20
 		Int? preemptible = 0
-		String? infoimport = NULL
-		String? formatimport = NULL
+		String? infoimport = "NULL"
+		String? formatimport = "NULL"
 		
 	}
 	
