@@ -6,8 +6,10 @@ library(SeqArray)
 
 args <- commandArgs(trailingOnly=T)
 vcf <- args[1]
+infoimport <- args[2]
+formatimport <- args[3]
 
 # remove extension, can be .vcf, .vcf.gz, .vcf.bgz
 gds_out <- paste0(sub(".vcf.bgz$|.vcf.gz$|.vcf$", "", basename(vcf)), ".gds")
 
-seqVCF2GDS(vcf, gds_out, storage.option="LZMA_RA", verbose=TRUE)
+seqVCF2GDS(vcf, gds_out, storage.option="LZMA_RA", verbose=TRUE, info.import=infoimport, format.import=formatimport)
