@@ -30,7 +30,6 @@ workflow vcfToGds_wf {
 		Int? disk = 100
 		Float? memory = 20
 		Int? preemptible = 0
-		
 	}
 	
 	scatter(this_file in vcf_files) {
@@ -44,8 +43,8 @@ workflow vcfToGds_wf {
 	}
 
 	meta {
-        author: ["Tim Majarian","Phuwanat"]
-        email: ["tmajaria@broadinstitute.org","s.phuwanat@gmail.com"]
+        author: "Tim Majarian"
+        email: "tmajaria@broadinstitute.org"
         description: "Convert a VCF file to a GDS file using the Seq Array package."
     }
 
