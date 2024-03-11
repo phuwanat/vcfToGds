@@ -1,0 +1,10 @@
+version: 1.0
+workflows:
+    - subclass: WDL
+      primaryDescriptorPath: README.md
+      testParameterFiles: test_inputs/ALL.chr22.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.MAC10.01p.vcf.gz
+      readMePath: README.md
+      authors:
+          - name: Phuwanat
+            email: s.phuwanat@gmail.com
+      
