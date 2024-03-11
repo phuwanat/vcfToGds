@@ -11,3 +11,10 @@ vcf <- args[1]
 gds_out <- paste0(sub(".vcf.bgz$|.vcf.gz$|.vcf$", "", basename(vcf)), ".gds")
 
 seqVCF2GDS(vcf, gds_out, storage.option="LZMA_RA", verbose=TRUE, info.import="DP", format.import="DP")
+
+genofile <- seqOpen(gds_out, readonly=FALSE)
+seqDelete(genofile, info.var="DP", fmt.var="DP")
+seqClose(genofile)
+
+# clean up the fragments to reduce the file size
+cleanup.gds(gds_out)
