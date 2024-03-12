@@ -12,7 +12,7 @@ task runGds {
 	}
 
 	runtime {
-		docker: "quay.io/manninglab/vcftogds:latest"
+		docker: "phuwanat/vcftogds:latest"
 		disks: "local-disk ~{disk} HDD"
 		bootDiskSizeGb: 6
 		memory: "~{memory} GB"
