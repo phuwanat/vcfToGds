@@ -10,7 +10,7 @@ vcf <- args[1]
 # remove extension, can be .vcf, .vcf.gz, .vcf.bgz
 gds_out <- paste0(sub(".vcf.bgz$|.vcf.gz$|.vcf$", "", basename(vcf)), ".gds")
 
-seqVCF2GDS(vcf, gds_out, storage.option="LZMA_RA", verbose=TRUE, info.import="DP", format.import="DP")
+seqVCF2GDS(vcf, gds_out, storage.option="LZMA_RA", verbose=TRUE, info.import="DP", fmt.import="DP")
 
 genofile <- seqOpen(gds_out, readonly=FALSE)
 seqDelete(genofile, info.var="DP", fmt.var="DP")
