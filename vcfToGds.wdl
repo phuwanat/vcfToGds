@@ -14,7 +14,7 @@ task runGds {
 	runtime {
 		docker: "phuwanat/vcftogds:latest"
 		disks: "local-disk ~{disk} HDD"
-		bootDiskSizeGb: 6
+		bootDiskSizeGb: 10
 		memory: "~{memory} GB"
 		preemptible: "~{preemptible}"
 	}
